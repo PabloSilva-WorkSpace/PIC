@@ -1,0 +1,11 @@
+0	1	mikroCPIC1618.exe -MSF -DBG -pP18F4520 -DL -O11111114 -fo8 -N"C:\Users\silva93\Desktop\Github\PIC\Unidade 01\Project_003_Tecla(selada)+Led\Project_003_Tecla+Led.mcppi" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Defs\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\uses\P18\" -SP"C:\Users\silva93\Desktop\Github\PIC\Unidade 01\Project_003_Tecla(selada)+Led\" -IP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\uses\P18\" -IP"C:\Users\silva93\Desktop\Github\PIC\Unidade 01\Project_003_Tecla(selada)+Led\" "Project_003_Tecla_selada__Led.c" "__Lib_Math.mcl" "__Lib_MathDouble.mcl" "__Lib_System.mcl" "__Lib_Delays.mcl"	 
+hint: 0	1139	Available RAM: 1515 [bytes], Available ROM: 32768 [bytes]	 
+diagnostics: 0	122	Compilation Started	Project_003_Tecla_selada__Led.c
+diagnostics: 40	123	Compiled Successfully	Project_003_Tecla_selada__Led.c
+diagnostics: 0	127	All files Compiled in 47 ms	 
+hint: 0	1144	Used RAM (bytes): 1 (1%)  Free RAM (bytes): 1514 (99%)	Used RAM (bytes): 1 (1%)  Free RAM (bytes): 1514 (99%)
+hint: 0	1144	Used ROM (bytes): 118 (1%)  Free ROM (bytes): 32650 (99%)	Used ROM (bytes): 118 (1%)  Free ROM (bytes): 32650 (99%)
+diagnostics: 0	125	Project Linked Successfully	Project_003_Tecla+Led.mcppi
+diagnostics: 0	128	Linked in 16 ms	 
+diagnostics: 0	129	Project 'Project_003_Tecla+Led.mcppi' completed: 94 ms	 
+diagnostics: 0	103	Finished successfully: 11 jun 2019, 14:47:10	Project_003_Tecla+Led.mcppi
