@@ -4,8 +4,12 @@ Definições:
           RD0 -> Led
 *************************************************/
 void main(){
-
+ #ifdef P18F45K22
+    ANSELB = 0;  //Configura todos os pinos do PORTB como digitais
+    ANSELD = 0;  //Configura todos os pinos do PORTB como digitais
+ #else
      ADCON1 |= 0X0F; //Configurar todos os pinos ADC como digital (ex: PIC18F4520)
+#endif
 
      //Tecla
      TRISB.RB0 = 1; //Configurar o pino RB0 como entrada
