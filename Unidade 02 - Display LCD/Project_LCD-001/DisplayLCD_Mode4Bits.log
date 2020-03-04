@@ -1,0 +1,13 @@
+0	1	mikroCPIC1618.exe -MSF -DBG -pP18F4520 -DL -O11111114 -fo8 -N"C:\Users\pablo\Desktop\Project_LCD-001\DisplayLCD_Mode4Bits.mcppi" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Defs\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\uses\P18\" -SP"C:\Users\pablo\Desktop\Project_LCD-001\" -IP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\uses\P18\" "main.c" "displayLCD.c" "__Lib_Math.mcl" "__Lib_MathDouble.mcl" "__Lib_System.mcl" "__Lib_Delays.mcl"	 
+hint: 0	1139	Available RAM: 1515 [bytes], Available ROM: 32768 [bytes]	 
+diagnostics: 0	122	Compilation Started	displaylcd.h
+diagnostics: 32	123	Compiled Successfully	main.c
+diagnostics: 0	122	Compilation Started	displaylcd.h
+diagnostics: 165	123	Compiled Successfully	displayLCD.c
+diagnostics: 0	127	All files Compiled in 453 ms	 
+hint: 0	1144	Used RAM (bytes): 40 (3%)  Free RAM (bytes): 1475 (97%)	Used RAM (bytes): 40 (3%)  Free RAM (bytes): 1475 (97%)
+hint: 0	1144	Used ROM (bytes): 830 (3%)  Free ROM (bytes): 31938 (97%)	Used ROM (bytes): 830 (3%)  Free ROM (bytes): 31938 (97%)
+diagnostics: 0	125	Project Linked Successfully	DisplayLCD_Mode4Bits.mcppi
+diagnostics: 0	128	Linked in 47 ms	 
+diagnostics: 0	129	Project 'DisplayLCD_Mode4Bits.mcppi' completed: 531 ms	 
+diagnostics: 0	103	Finished successfully: 04 mar 2020, 01:39:46	DisplayLCD_Mode4Bits.mcppi

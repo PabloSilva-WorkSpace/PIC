@@ -1,0 +1,26 @@
+main
+	__CC2DW
+	ConfigMCU
+	DisplayLCD_Init
+		LCD_Enable
+		DisplayLCD_Cmd
+			LCD_Write_Data
+				LCD_Enable
+	DisplayLCD_Cmd
+		LCD_Write_Data
+			LCD_Enable
+	DisplayLCD_Print
+		LCD_Write_Data
+			LCD_Enable
+		DisplayLCD_Print_CP
+			LCD_Write_Data
+				LCD_Enable
+	DisplayLCD_Char
+		LCD_Write_Data
+			LCD_Enable
+		DisplayLCD_Char_CP
+			LCD_Write_Data
+				LCD_Enable
+	DisplayLCD_Char_CP
+		LCD_Write_Data
+			LCD_Enable
