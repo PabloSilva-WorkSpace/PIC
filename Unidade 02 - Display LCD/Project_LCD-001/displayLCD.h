@@ -24,8 +24,8 @@
 #define LCD_Cursor_Alt   (0x0F)
 #define LCD_Cursor_Home  (0x02)
 /* Others */
-#define LCD_DATA_PORT_IO   (PORTB)
 #define LCD_DATA_PORT_TRIS (TRISB)
+#define LCD_DATA_PORT_IO   (PORTB)
 #define LCD_4Bits  // or #define LCD_8Bits
 
 
@@ -35,7 +35,7 @@
 void DisplayLCD_Init( void );
 void LCD_Enable( void );
 void LCD_Write_Data( unsigned char, unsigned char );
-void DisplayLCD_Cmd( unsigned int );
+void DisplayLCD_Cmd( unsigned char );
 void DisplayLCD_Char( unsigned char, unsigned char, unsigned char );
 void DisplayLCD_Char_CP( unsigned char );
 void DisplayLCD_Print( unsigned char , unsigned char, unsigned char * );

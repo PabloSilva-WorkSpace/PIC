@@ -54,7 +54,8 @@ void DisplayLCD_Init( void )
     LCD_DATA5_IO = 1;
     LCD_Enable();   /* 1º Clock */
     LCD_Enable();   /* 2º Clock */
-    /* Envia 2 vezes o comando 0x02 */
+    Delay_ms(1);
+    /* Envia comandos de cofiguração */
     DisplayLCD_Cmd(0x28);  // 2 linhas 7x5 em modo 4-Bits
     DisplayLCD_Cmd(0x0C);  // Display aceso sem cursor
     DisplayLCD_Cmd(0x06);  // Escreve deslocando o cursor para a direita
@@ -76,7 +77,7 @@ void LCD_Enable( void )
 }
 
 
-void DisplayLCD_Cmd( unsigned int Cmd )
+void DisplayLCD_Cmd( unsigned char Cmd )
 {
     LCD_Write_Data(0, Cmd);   //RS = 0: Comando a ser processado
 }
@@ -84,7 +85,7 @@ void DisplayLCD_Cmd( unsigned int Cmd )
 
 void LCD_Write_Data( unsigned char RS, unsigned char Data )
 {
-    LCD_RS_IO = RS;
+    LCD_RS_IO = RS;            //RS = 0: Comando a ser processado  |  RS = 1: Caractere a ser impresso
 #ifdef LCD_4Bits
     Delay_ms(2);
     LCD_DATA4_IO = ((Data & 0x10) == 0x10);
@@ -92,7 +93,7 @@ void LCD_Write_Data( unsigned char RS, unsigned char Data )
     LCD_DATA6_IO = ((Data & 0x40) == 0x40);
     LCD_DATA7_IO = ((Data & 0x80) == 0x80);
     
-    LCD_Enable(void);     //Executa um clock no LCD
+    LCD_Enable();     //Executa um clock no LCD
     
     Data = Data << 4;     //Rotaciona o nibble LSB para a posição do nibble MSB
     LCD_DATA4_IO = ((Data & 0x10) == 0x10);
@@ -100,11 +101,11 @@ void LCD_Write_Data( unsigned char RS, unsigned char Data )
     LCD_DATA6_IO = ((Data & 0x40) == 0x40);
     LCD_DATA7_IO = ((Data & 0x80) == 0x80);
     
-    LCD_Enable(void);     //Executa um clock no LCD
+    LCD_Enable();     //Executa um clock no LCD
 #endif
 #ifdef LCD_8Bits
     LCD_DATA_PORT_IO = Data;
-    LCD_Enable(void);
+    LCD_Enable();
 #endif
 }
 

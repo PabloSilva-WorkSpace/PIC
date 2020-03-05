@@ -19,6 +19,7 @@ void ConfigMCU()
 
 
 void main() {
+    
     ConfigMCU();
     
     DisplayLCD_Init();
@@ -28,5 +29,7 @@ void main() {
     DisplayLCD_Char(2, 14, 'A');
     DisplayLCD_Char_CP('%');
     
-    while(1);
+    while(1){
+        //do nothing
+    }
 }
