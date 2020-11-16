@@ -3,18 +3,18 @@
    Defines
 *******************************************************************************/
 /* Connections between uC and display LCD */
-#define LCD_DATA4_TRIS   (TRISB.RB0)
-#define LCD_DATA4_IO     (PORTB.RB0)
-#define LCD_DATA5_TRIS   (TRISB.RB1)
-#define LCD_DATA5_IO     (PORTB.RB1)
-#define LCD_DATA6_TRIS   (TRISB.RB2)
-#define LCD_DATA6_IO     (PORTB.RB2)
-#define LCD_DATA7_TRIS   (TRISB.RB3)
-#define LCD_DATA7_IO     (PORTB.RB3)
-#define LCD_RS_TRIS      (TRISB.RB4)
-#define LCD_RS_IO        (PORTB.RB4)
-#define LCD_EN_TRIS      (TRISB.RB5)
-#define LCD_EN_IO        (PORTB.RB5)
+#define LCD_DATA4_TRIS   (TRISD.RD4)
+#define LCD_DATA4_IO     (PORTD.RD4)
+#define LCD_DATA5_TRIS   (TRISD.RD5)
+#define LCD_DATA5_IO     (PORTD.RD5)
+#define LCD_DATA6_TRIS   (TRISD.RD6)
+#define LCD_DATA6_IO     (PORTD.RD6)
+#define LCD_DATA7_TRIS   (TRISD.RD7)
+#define LCD_DATA7_IO     (PORTD.RD7)
+#define LCD_RS_TRIS      (TRISE.RE2)
+#define LCD_RS_IO        (PORTE.RE2)
+#define LCD_EN_TRIS      (TRISE.RE1)
+#define LCD_EN_IO        (PORTE.RE1)
 /* Commands to LCD controller (Datasheet) */
 #define LCD_Clear        (0x01)
 #define LCD_Shift_Left   (0x18)
@@ -24,8 +24,8 @@
 #define LCD_Cursor_Alt   (0x0F)
 #define LCD_Cursor_Home  (0x02)
 /* Others */
-#define LCD_DATA_PORT_TRIS (TRISB)
-#define LCD_DATA_PORT_IO   (PORTB)
+#define LCD_DATA_PORT_TRIS (TRISD)
+#define LCD_DATA_PORT_IO   (PORTD)
 #define LCD_4Bits  // or #define LCD_8Bits
 
 

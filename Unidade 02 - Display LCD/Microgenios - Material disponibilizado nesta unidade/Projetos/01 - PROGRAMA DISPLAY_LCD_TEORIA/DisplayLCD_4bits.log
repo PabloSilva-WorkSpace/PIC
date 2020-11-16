@@ -1,0 +1,16 @@
+0	1	mikroCPIC1618.exe -MSF -DBG -pP18F45K22 -DL -O11111114 -fo8 -N"C:\Users\Microgenios\Desktop\Material Curso PIC\Unidade 02 - LCD\Exemplos de Programas\07 - DISPLAY_LCD_TEORIA\DisplayLCD_4bits.mcppi" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\defs\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\uses\P18\" -SP"C:\Users\Microgenios\Desktop\Material Curso PIC\Unidade 02 - LCD\Exemplos de Programas\07 - DISPLAY_LCD_TEORIA\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC_60\defs\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC_60\uses\P18\" -SP"C:\Users\Microgenios\Google Drive\Novos Cursos Online\Microcontroladores PIC Programação em C\Unidade 02 - LCD\Exemplos de Programas\07 - DISPLAY_LCD_TEORIA\" -SP"C:\Users\Microgenios\Google Drive\Novos Cursos Online\Microcontroladores PIC Programação em C\Exemplos de Programas\Exemplos de Programas\PIC18F45K22\07 - DISPLAY_LCD_TEORIA\" "DisplayLCD_4bits.c" "__Lib_Math.mcl" "__Lib_MathDouble.mcl" "__Lib_System.mcl" "__Lib_Delays.mcl"	 
+warning: 0	1501	Specified search path does not exist: 'C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC_60\defs'	 
+warning: 0	1501	Specified search path does not exist: 'C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC_60\uses\P18'	 
+warning: 0	1501	Specified search path does not exist: 'C:\Users\Microgenios\Google Drive\Novos Cursos Online\Microcontroladores PIC Programação em C\Unidade 02 - LCD\Exemplos de Programas\07 - DISPLAY_LCD_TEORIA'	 
+warning: 0	1501	Specified search path does not exist: 'C:\Users\Microgenios\Google Drive\Novos Cursos Online\Microcontroladores PIC Programação em C\Exemplos de Programas\Exemplos de Programas\PIC18F45K22\07 - DISPLAY_LCD_TEORIA'	 
+hint: 0	1139	Available RAM: 1515 [bytes], Available ROM: 32768 [bytes]	 
+diagnostics: 0	126	All files Preprocessed in 31 ms	 
+diagnostics: 0	122	Compilation Started	DisplayLCD_4bits.c
+diagnostics: 256	123	Compiled Successfully	DisplayLCD_4bits.c
+diagnostics: 0	127	All files Compiled in 47 ms	 
+hint: 0	1144	Used RAM (bytes): 37 (2%)  Free RAM (bytes): 1478 (98%)	Used RAM (bytes): 37 (2%)  Free RAM (bytes): 1478 (98%)
+hint: 0	1144	Used ROM (bytes): 829 (3%)  Free ROM (bytes): 31939 (97%)	Used ROM (bytes): 829 (3%)  Free ROM (bytes): 31939 (97%)
+diagnostics: 0	125	Project Linked Successfully	DisplayLCD_4bits.mcppi
+diagnostics: 0	128	Linked in 31 ms	 
+diagnostics: 0	129	Project 'DisplayLCD_4bits.mcppi' completed: 125 ms	 
+diagnostics: 0	103	Finished successfully: 10 fev 2014, 14:30:53	DisplayLCD_4bits.mcppi

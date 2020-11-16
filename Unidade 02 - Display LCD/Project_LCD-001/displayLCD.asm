@@ -3,29 +3,29 @@ _DisplayLCD_Init:
 
 ;displayLCD.c,6 :: 		void DisplayLCD_Init( void )
 ;displayLCD.c,31 :: 		LCD_DATA4_TRIS = 0;
-	BCF         TRISB+0, 0 
+	BCF         TRISD+0, 4 
 ;displayLCD.c,32 :: 		LCD_DATA4_IO   = 0;
-	BCF         PORTB+0, 0 
+	BCF         PORTD+0, 4 
 ;displayLCD.c,33 :: 		LCD_DATA5_TRIS = 0;
-	BCF         TRISB+0, 1 
+	BCF         TRISD+0, 5 
 ;displayLCD.c,34 :: 		LCD_DATA5_IO   = 0;
-	BCF         PORTB+0, 1 
+	BCF         PORTD+0, 5 
 ;displayLCD.c,35 :: 		LCD_DATA6_TRIS = 0;
-	BCF         TRISB+0, 2 
+	BCF         TRISD+0, 6 
 ;displayLCD.c,36 :: 		LCD_DATA6_IO   = 0;
-	BCF         PORTB+0, 2 
+	BCF         PORTD+0, 6 
 ;displayLCD.c,37 :: 		LCD_DATA7_TRIS = 0;
-	BCF         TRISB+0, 3 
+	BCF         TRISD+0, 7 
 ;displayLCD.c,38 :: 		LCD_DATA7_IO   = 0;
-	BCF         PORTB+0, 3 
+	BCF         PORTD+0, 7 
 ;displayLCD.c,39 :: 		LCD_EN_TRIS    = 0;
-	BCF         TRISB+0, 5 
+	BCF         TRISE+0, 1 
 ;displayLCD.c,40 :: 		LCD_EN_IO      = 0;
-	BCF         PORTB+0, 5 
+	BCF         PORTE+0, 1 
 ;displayLCD.c,41 :: 		LCD_RS_TRIS    = 0;
-	BCF         TRISB+0, 4 
+	BCF         TRISE+0, 2 
 ;displayLCD.c,42 :: 		LCD_RS_IO      = 0;
-	BCF         PORTB+0, 4 
+	BCF         PORTE+0, 2 
 ;displayLCD.c,44 :: 		Delay_ms(100);   //Tempo necessário para inicialização do LCD após power-on
 	MOVLW       2
 	MOVWF       R11, 0
@@ -42,19 +42,19 @@ L_DisplayLCD_Init0:
 	BRA         L_DisplayLCD_Init0
 	NOP
 ;displayLCD.c,46 :: 		LCD_DATA4_IO = 1;
-	BSF         PORTB+0, 0 
+	BSF         PORTD+0, 4 
 ;displayLCD.c,47 :: 		LCD_DATA5_IO = 1;
-	BSF         PORTB+0, 1 
+	BSF         PORTD+0, 5 
 ;displayLCD.c,48 :: 		LCD_Enable();   /* 1º Clock */
 	CALL        _LCD_Enable+0, 0
 ;displayLCD.c,49 :: 		LCD_Enable();   /* 2º Clock */
 	CALL        _LCD_Enable+0, 0
 ;displayLCD.c,50 :: 		LCD_Enable();   /* 3º Clock */
 	CALL        _LCD_Enable+0, 0
-;displayLCD.c,51 :: 		Delay_ms(1);
-	MOVLW       3
+;displayLCD.c,51 :: 		Delay_ms(10);
+	MOVLW       26
 	MOVWF       R12, 0
-	MOVLW       151
+	MOVLW       248
 	MOVWF       R13, 0
 L_DisplayLCD_Init1:
 	DECFSZ      R13, 1, 1
@@ -62,26 +62,24 @@ L_DisplayLCD_Init1:
 	DECFSZ      R12, 1, 1
 	BRA         L_DisplayLCD_Init1
 	NOP
-	NOP
 ;displayLCD.c,53 :: 		LCD_DATA4_IO = 0;
-	BCF         PORTB+0, 0 
+	BCF         PORTD+0, 4 
 ;displayLCD.c,54 :: 		LCD_DATA5_IO = 1;
-	BSF         PORTB+0, 1 
+	BSF         PORTD+0, 5 
 ;displayLCD.c,55 :: 		LCD_Enable();   /* 1º Clock */
 	CALL        _LCD_Enable+0, 0
 ;displayLCD.c,56 :: 		LCD_Enable();   /* 2º Clock */
 	CALL        _LCD_Enable+0, 0
-;displayLCD.c,57 :: 		Delay_ms(1);
-	MOVLW       3
+;displayLCD.c,57 :: 		Delay_ms(10);
+	MOVLW       26
 	MOVWF       R12, 0
-	MOVLW       151
+	MOVLW       248
 	MOVWF       R13, 0
 L_DisplayLCD_Init2:
 	DECFSZ      R13, 1, 1
 	BRA         L_DisplayLCD_Init2
 	DECFSZ      R12, 1, 1
 	BRA         L_DisplayLCD_Init2
-	NOP
 	NOP
 ;displayLCD.c,59 :: 		DisplayLCD_Cmd(0x28);  // 2 linhas 7x5 em modo 4-Bits
 	MOVLW       40
@@ -115,7 +113,7 @@ L_LCD_Enable3:
 	BRA         L_LCD_Enable3
 	NOP
 ;displayLCD.c,73 :: 		LCD_EN_IO = 1;
-	BSF         PORTB+0, 5 
+	BSF         PORTE+0, 1 
 ;displayLCD.c,74 :: 		Delay_us(40);
 	MOVLW       26
 	MOVWF       R13, 0
@@ -124,7 +122,7 @@ L_LCD_Enable4:
 	BRA         L_LCD_Enable4
 	NOP
 ;displayLCD.c,75 :: 		LCD_EN_IO = 0;
-	BCF         PORTB+0, 5 
+	BCF         PORTE+0, 1 
 ;displayLCD.c,76 :: 		Delay_us(40);
 	MOVLW       26
 	MOVWF       R13, 0
@@ -156,10 +154,10 @@ _LCD_Write_Data:
 ;displayLCD.c,88 :: 		LCD_RS_IO = RS;            //RS = 0: Comando a ser processado  |  RS = 1: Caractere a ser impresso
 	BTFSC       FARG_LCD_Write_Data_RS+0, 0 
 	GOTO        L__LCD_Write_Data21
-	BCF         PORTB+0, 4 
+	BCF         PORTE+0, 2 
 	GOTO        L__LCD_Write_Data22
 L__LCD_Write_Data21:
-	BSF         PORTB+0, 4 
+	BSF         PORTE+0, 2 
 L__LCD_Write_Data22:
 ;displayLCD.c,90 :: 		Delay_ms(2);
 	MOVLW       6
@@ -184,10 +182,10 @@ L_LCD_Write_Data6:
 	MOVWF       R0 
 	BTFSC       R0, 0 
 	GOTO        L__LCD_Write_Data23
-	BCF         PORTB+0, 0 
+	BCF         PORTD+0, 4 
 	GOTO        L__LCD_Write_Data24
 L__LCD_Write_Data23:
-	BSF         PORTB+0, 0 
+	BSF         PORTD+0, 4 
 L__LCD_Write_Data24:
 ;displayLCD.c,92 :: 		LCD_DATA5_IO = ((Data & 0x20) == 0x20);
 	MOVLW       32
@@ -201,10 +199,10 @@ L__LCD_Write_Data24:
 	MOVWF       R0 
 	BTFSC       R0, 0 
 	GOTO        L__LCD_Write_Data25
-	BCF         PORTB+0, 1 
+	BCF         PORTD+0, 5 
 	GOTO        L__LCD_Write_Data26
 L__LCD_Write_Data25:
-	BSF         PORTB+0, 1 
+	BSF         PORTD+0, 5 
 L__LCD_Write_Data26:
 ;displayLCD.c,93 :: 		LCD_DATA6_IO = ((Data & 0x40) == 0x40);
 	MOVLW       64
@@ -218,10 +216,10 @@ L__LCD_Write_Data26:
 	MOVWF       R0 
 	BTFSC       R0, 0 
 	GOTO        L__LCD_Write_Data27
-	BCF         PORTB+0, 2 
+	BCF         PORTD+0, 6 
 	GOTO        L__LCD_Write_Data28
 L__LCD_Write_Data27:
-	BSF         PORTB+0, 2 
+	BSF         PORTD+0, 6 
 L__LCD_Write_Data28:
 ;displayLCD.c,94 :: 		LCD_DATA7_IO = ((Data & 0x80) == 0x80);
 	MOVLW       128
@@ -235,10 +233,10 @@ L__LCD_Write_Data28:
 	MOVWF       R0 
 	BTFSC       R0, 0 
 	GOTO        L__LCD_Write_Data29
-	BCF         PORTB+0, 3 
+	BCF         PORTD+0, 7 
 	GOTO        L__LCD_Write_Data30
 L__LCD_Write_Data29:
-	BSF         PORTB+0, 3 
+	BSF         PORTD+0, 7 
 L__LCD_Write_Data30:
 ;displayLCD.c,96 :: 		LCD_Enable();     //Executa um clock no LCD
 	CALL        _LCD_Enable+0, 0
@@ -267,10 +265,10 @@ L__LCD_Write_Data30:
 	MOVWF       R0 
 	BTFSC       R0, 0 
 	GOTO        L__LCD_Write_Data31
-	BCF         PORTB+0, 0 
+	BCF         PORTD+0, 4 
 	GOTO        L__LCD_Write_Data32
 L__LCD_Write_Data31:
-	BSF         PORTB+0, 0 
+	BSF         PORTD+0, 4 
 L__LCD_Write_Data32:
 ;displayLCD.c,100 :: 		LCD_DATA5_IO = ((Data & 0x20) == 0x20);
 	MOVLW       32
@@ -284,10 +282,10 @@ L__LCD_Write_Data32:
 	MOVWF       R0 
 	BTFSC       R0, 0 
 	GOTO        L__LCD_Write_Data33
-	BCF         PORTB+0, 1 
+	BCF         PORTD+0, 5 
 	GOTO        L__LCD_Write_Data34
 L__LCD_Write_Data33:
-	BSF         PORTB+0, 1 
+	BSF         PORTD+0, 5 
 L__LCD_Write_Data34:
 ;displayLCD.c,101 :: 		LCD_DATA6_IO = ((Data & 0x40) == 0x40);
 	MOVLW       64
@@ -301,10 +299,10 @@ L__LCD_Write_Data34:
 	MOVWF       R0 
 	BTFSC       R0, 0 
 	GOTO        L__LCD_Write_Data35
-	BCF         PORTB+0, 2 
+	BCF         PORTD+0, 6 
 	GOTO        L__LCD_Write_Data36
 L__LCD_Write_Data35:
-	BSF         PORTB+0, 2 
+	BSF         PORTD+0, 6 
 L__LCD_Write_Data36:
 ;displayLCD.c,102 :: 		LCD_DATA7_IO = ((Data & 0x80) == 0x80);
 	MOVLW       128
@@ -318,10 +316,10 @@ L__LCD_Write_Data36:
 	MOVWF       R0 
 	BTFSC       R0, 0 
 	GOTO        L__LCD_Write_Data37
-	BCF         PORTB+0, 3 
+	BCF         PORTD+0, 7 
 	GOTO        L__LCD_Write_Data38
 L__LCD_Write_Data37:
-	BSF         PORTB+0, 3 
+	BSF         PORTD+0, 7 
 L__LCD_Write_Data38:
 ;displayLCD.c,104 :: 		LCD_Enable();     //Executa um clock no LCD
 	CALL        _LCD_Enable+0, 0
@@ -334,7 +332,7 @@ _DisplayLCD_Print:
 
 ;displayLCD.c,113 :: 		void DisplayLCD_Print(unsigned char linha, unsigned char coluna, unsigned char * pStr)
 ;displayLCD.c,115 :: 		LCD_RS_IO = 0;   //Primeiramente é necessário escrever o comando (RS = 0) que permite posicionar o cursor na coordenada (X, Y) desejada
-	BCF         PORTB+0, 4 
+	BCF         PORTE+0, 2 
 ;displayLCD.c,116 :: 		switch(linha)
 	GOTO        L_DisplayLCD_Print7
 ;displayLCD.c,118 :: 		case 1:{
@@ -422,7 +420,7 @@ _DisplayLCD_Char:
 
 ;displayLCD.c,143 :: 		void DisplayLCD_Char( unsigned char linha, unsigned char coluna, unsigned char Tchar )
 ;displayLCD.c,145 :: 		LCD_RS_IO = 0;   //Primeiramente é necessário escrever o comando (RS = 0) que permite posicionar o cursor na coordenada (X, Y) desejada
-	BCF         PORTB+0, 4 
+	BCF         PORTE+0, 2 
 ;displayLCD.c,146 :: 		switch(linha)
 	GOTO        L_DisplayLCD_Char13
 ;displayLCD.c,148 :: 		case 1:{

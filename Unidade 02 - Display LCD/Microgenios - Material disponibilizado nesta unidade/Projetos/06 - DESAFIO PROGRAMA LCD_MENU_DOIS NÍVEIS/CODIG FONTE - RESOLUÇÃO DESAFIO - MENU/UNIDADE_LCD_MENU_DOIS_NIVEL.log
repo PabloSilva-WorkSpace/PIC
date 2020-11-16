@@ -1,0 +1,15 @@
+0	1	mikroCPIC1618.exe -MSF -DBG -pP18F45K22 -DL -O11111114 -fo8 -N"C:\Users\Microgenios\Desktop\UNIDADE_02_DISPLAY_LCD_PROJETOS\06 - DESAFIO PROGRAMA LCD_MENU_DOIS NÍVEIS\CODIG FONTE - RESOLUÇÃO DESAFIO - MENU\UNIDADE_LCD_MENU_DOIS_NIVEL.mcppi" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\defs\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\uses\P18\" -SP"C:\Users\Microgenios\Desktop\UNIDADE_02_DISPLAY_LCD_PROJETOS\06 - DESAFIO PROGRAMA LCD_MENU_DOIS NÍVEIS\CODIG FONTE - RESOLUÇÃO DESAFIO - MENU\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC_60\defs\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC_60\uses\P18\" -SP"C:\Users\Microgenios\Google Drive\Novos Cursos Online\Microcontroladores PIC Programação em C\Unidade 02 - LCD\Exercício Resolvido\" "Desafio_MenuLCD.c" "__Lib_Math.mcl" "__Lib_MathDouble.mcl" "__Lib_System.mcl" "__Lib_Delays.mcl" "__Lib_LcdConsts.mcl" "__Lib_Lcd.mcl"	 
+warning: 0	1501	Specified search path does not exist: 'C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC_60\defs'	 
+warning: 0	1501	Specified search path does not exist: 'C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC_60\uses\P18'	 
+warning: 0	1501	Specified search path does not exist: 'C:\Users\Microgenios\Google Drive\Novos Cursos Online\Microcontroladores PIC Programação em C\Unidade 02 - LCD\Exercício Resolvido'	 
+hint: 0	1139	Available RAM: 1515 [bytes], Available ROM: 32768 [bytes]	 
+diagnostics: 0	126	All files Preprocessed in 31 ms	 
+diagnostics: 0	122	Compilation Started	Desafio_MenuLCD.c
+diagnostics: 194	123	Compiled Successfully	Desafio_MenuLCD.c
+diagnostics: 0	127	All files Compiled in 62 ms	 
+hint: 0	1144	Used RAM (bytes): 160 (11%)  Free RAM (bytes): 1355 (89%)	Used RAM (bytes): 160 (11%)  Free RAM (bytes): 1355 (89%)
+hint: 0	1144	Used ROM (bytes): 1500 (5%)  Free ROM (bytes): 31268 (95%)	Used ROM (bytes): 1500 (5%)  Free ROM (bytes): 31268 (95%)
+diagnostics: 0	125	Project Linked Successfully	UNIDADE_LCD_MENU_DOIS_NIVEL.mcppi
+diagnostics: 0	128	Linked in 47 ms	 
+diagnostics: 0	129	Project 'UNIDADE_LCD_MENU_DOIS_NIVEL.mcppi' completed: 171 ms	 
+diagnostics: 0	103	Finished successfully: 11 fev 2014, 13:18:55	UNIDADE_LCD_MENU_DOIS_NIVEL.mcppi

@@ -13,33 +13,33 @@ void DisplayLCD_Print_CP( unsigned char * );
 void DisplayLCD_Init( void )
 {
 #line 31 "C:/Users/pablo/Desktop/Github/PIC/Unidade 02 - Display LCD/Project_LCD-001/displayLCD.c"
-  (TRISB.RB0)  = 0;
-  (PORTB.RB0)  = 0;
-  (TRISB.RB1)  = 0;
-  (PORTB.RB1)  = 0;
-  (TRISB.RB2)  = 0;
-  (PORTB.RB2)  = 0;
-  (TRISB.RB3)  = 0;
-  (PORTB.RB3)  = 0;
-  (TRISB.RB5)  = 0;
-  (PORTB.RB5)  = 0;
-  (TRISB.RB4)  = 0;
-  (PORTB.RB4)  = 0;
+  (TRISD.RD4)  = 0;
+  (PORTD.RD4)  = 0;
+  (TRISD.RD5)  = 0;
+  (PORTD.RD5)  = 0;
+  (TRISD.RD6)  = 0;
+  (PORTD.RD6)  = 0;
+  (TRISD.RD7)  = 0;
+  (PORTD.RD7)  = 0;
+  (TRISE.RE1)  = 0;
+  (PORTE.RE1)  = 0;
+  (TRISE.RE2)  = 0;
+  (PORTE.RE2)  = 0;
 
  Delay_ms(100);
 
-  (PORTB.RB0)  = 1;
-  (PORTB.RB1)  = 1;
+  (PORTD.RD4)  = 1;
+  (PORTD.RD5)  = 1;
  LCD_Enable();
  LCD_Enable();
  LCD_Enable();
- Delay_ms(1);
+ Delay_ms(10);
 
-  (PORTB.RB0)  = 0;
-  (PORTB.RB1)  = 1;
+  (PORTD.RD4)  = 0;
+  (PORTD.RD5)  = 1;
  LCD_Enable();
  LCD_Enable();
- Delay_ms(1);
+ Delay_ms(10);
 
  DisplayLCD_Cmd(0x28);
  DisplayLCD_Cmd(0x0C);
@@ -51,9 +51,9 @@ void DisplayLCD_Init( void )
 void LCD_Enable( void )
 {
  Delay_us(40);
-  (PORTB.RB5)  = 1;
+  (PORTE.RE1)  = 1;
  Delay_us(40);
-  (PORTB.RB5)  = 0;
+  (PORTE.RE1)  = 0;
  Delay_us(40);
 }
 
@@ -66,21 +66,21 @@ void DisplayLCD_Cmd( unsigned char Cmd )
 
 void LCD_Write_Data( unsigned char RS, unsigned char Data )
 {
-  (PORTB.RB4)  = RS;
+  (PORTE.RE2)  = RS;
 
  Delay_ms(2);
-  (PORTB.RB0)  = ((Data & 0x10) == 0x10);
-  (PORTB.RB1)  = ((Data & 0x20) == 0x20);
-  (PORTB.RB2)  = ((Data & 0x40) == 0x40);
-  (PORTB.RB3)  = ((Data & 0x80) == 0x80);
+  (PORTD.RD4)  = ((Data & 0x10) == 0x10);
+  (PORTD.RD5)  = ((Data & 0x20) == 0x20);
+  (PORTD.RD6)  = ((Data & 0x40) == 0x40);
+  (PORTD.RD7)  = ((Data & 0x80) == 0x80);
 
  LCD_Enable();
 
  Data = Data << 4;
-  (PORTB.RB0)  = ((Data & 0x10) == 0x10);
-  (PORTB.RB1)  = ((Data & 0x20) == 0x20);
-  (PORTB.RB2)  = ((Data & 0x40) == 0x40);
-  (PORTB.RB3)  = ((Data & 0x80) == 0x80);
+  (PORTD.RD4)  = ((Data & 0x10) == 0x10);
+  (PORTD.RD5)  = ((Data & 0x20) == 0x20);
+  (PORTD.RD6)  = ((Data & 0x40) == 0x40);
+  (PORTD.RD7)  = ((Data & 0x80) == 0x80);
 
  LCD_Enable();
 #line 110 "C:/Users/pablo/Desktop/Github/PIC/Unidade 02 - Display LCD/Project_LCD-001/displayLCD.c"
@@ -89,7 +89,7 @@ void LCD_Write_Data( unsigned char RS, unsigned char Data )
 
 void DisplayLCD_Print(unsigned char linha, unsigned char coluna, unsigned char * pStr)
 {
-  (PORTB.RB4)  = 0;
+  (PORTE.RE2)  = 0;
  switch(linha)
  {
  case 1:{
@@ -119,7 +119,7 @@ void DisplayLCD_Print_CP(unsigned char * pStr)
 
 void DisplayLCD_Char( unsigned char linha, unsigned char coluna, unsigned char Tchar )
 {
-  (PORTB.RB4)  = 0;
+  (PORTE.RE2)  = 0;
  switch(linha)
  {
  case 1:{

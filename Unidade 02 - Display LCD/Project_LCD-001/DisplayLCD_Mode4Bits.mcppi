@@ -6,7 +6,7 @@ Value=0
 [BUILD_TYPE]
 Value=0
 [ACTIVE_TAB]
-Value=displayLCD.c
+Value=displayLCD.h
 [USE_EEPROM]
 Value=0
 [USE_HEAP]
@@ -50,13 +50,10 @@ Count=0
 VECTOR_MODE=0
 IVT_BASE=00000008
 [EXPANDED_NODES]
-0=DisplayTFT.mcppi
 1=Sources
-14=DisplayLCD_Mode4Bits.mcppi
-15=Sources
-Count=4
+Count=1
 [LIB_EXPANDED_NODES]
-Count=0
+Count=1
 [PROGRAMMER_TYPE]
 Value=mikroE mikroProg
 [CODEGRIP_OPTIONS]

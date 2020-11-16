@@ -48,13 +48,13 @@ void DisplayLCD_Init( void )
     LCD_Enable();   /* 1º Clock */
     LCD_Enable();   /* 2º Clock */
     LCD_Enable();   /* 3º Clock */
-    Delay_ms(1);
+    Delay_ms(10);
     /* Envia 2 vezes o comando 0x02 */
     LCD_DATA4_IO = 0;
     LCD_DATA5_IO = 1;
     LCD_Enable();   /* 1º Clock */
     LCD_Enable();   /* 2º Clock */
-    Delay_ms(1);
+    Delay_ms(10);
     /* Envia comandos de cofiguração */
     DisplayLCD_Cmd(0x28);  // 2 linhas 7x5 em modo 4-Bits
     DisplayLCD_Cmd(0x0C);  // Display aceso sem cursor

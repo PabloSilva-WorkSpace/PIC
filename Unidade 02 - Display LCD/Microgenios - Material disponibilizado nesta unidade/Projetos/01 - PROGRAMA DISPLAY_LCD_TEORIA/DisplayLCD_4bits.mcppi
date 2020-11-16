@@ -1,0 +1,54 @@
+[DEVICE]
+Name=P18F45K22
+Clock=8000000
+[MEMORY_MODEL]
+Value=-1
+[BUILD_TYPE]
+Value=0
+[ACTIVE_TAB]
+Value=DisplayLCD_4bits.c
+[USE_EEPROM]
+Value=0
+[USE_HEAP]
+Value=0
+[HEAP_SIZE]
+Value=2000
+[EEPROM_DEFINITION]
+Value=
+[FILES]
+Count=1
+File0=DisplayLCD_4bits.c
+[BINARIES]
+Count=0
+[IMAGES]
+Count=0
+ActiveImageIndex=-1
+[OPENED_FILES]
+Count=1
+File0=DisplayLCD_4bits.c
+[EEPROM]
+Count=0
+[ACTIVE_COMMENTS_FILES]
+Count=0
+[OTHER_FILES]
+Count=0
+[SEARCH_PATH]
+Count=7
+Path0=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\defs\
+Path1=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\uses\P18\
+Path2=C:\Users\Microgenios\Desktop\Material Curso PIC\Unidade 02 - LCD\Exemplos de Programas\07 - DISPLAY_LCD_TEORIA\
+Path3=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC_60\defs\
+Path4=C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC_60\uses\P18\
+Path5=C:\Users\Microgenios\Google Drive\Novos Cursos Online\Microcontroladores PIC Programação em C\Unidade 02 - LCD\Exemplos de Programas\07 - DISPLAY_LCD_TEORIA\
+Path6=C:\Users\Microgenios\Google Drive\Novos Cursos Online\Microcontroladores PIC Programação em C\Exemplos de Programas\Exemplos de Programas\PIC18F45K22\07 - DISPLAY_LCD_TEORIA\
+[HEADER_PATH]
+Count=0
+[HEADERS]
+Count=0
+[PLDS]
+Count=0
+[Useses]
+Count=0
+[EXPANDED NODES]
+Node1=Sources
+Count=1
